@@ -4,7 +4,7 @@
 
 <div class="menu" class:is-open={open}>
 	{#each ['Accueil', 'Projet', 'Contact'] as link}
-		<a href="/about">
+		<a href="">
 			{link}
 		</a>
 	{/each}
@@ -23,14 +23,17 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
-			border: solid 1px red;
+			border: solid 1px white;
 			border-radius: 2rem;
 			text-align: center;
-			margin: 0;
+			color: white;
+			margin-top: 3rem;
+			margin-bottom: 4rem;
 		}
 		.menu a {
 			padding: 0.5rem 4rem 0.5rem 4rem;
 			margin: 0.5rem;
+			font-size: 1.25rem;
 		}
 	}
 
@@ -41,7 +44,7 @@
 		display: flex;
 		flex-direction: column;
 		text-decoration: none;
-		background-color: white;
+		color: white;
 	}
 
 	a:hover {
