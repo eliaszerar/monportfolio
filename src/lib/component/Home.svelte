@@ -1,43 +1,42 @@
 <script>
 	import Button from '$lib/component/Button.svelte';
 	import Avatar from '$lib/assets/avatar.png';
+	import EliasZerar from '$lib/assets/cv.pdf';
 </script>
 
 <section id="accueil" class="home">
 	<div class="content">
-		<h1>Bonjour je m'appelle <span>Elias</span></h1>
-		<h2>Développeur <span>Web</span></h2>
+		<h1>
+			Bonjour je m'appelle <span>Elias</span>
+			<span class="second-part">Développeur <span class="web">Web</span></span>
+		</h1>
 		<p>
-			Actuellement en Alterancce à Radiofrance en tant que developpeur web pour la platoforme ici.fr
+			Actuellement en Alternance à RadioFrance en tant que développeur web pour la plateforme ici.fr
 		</p>
-        <Button
-                content="Lien de mon cv"
-                link="Voir"
-                href="/cv.pdf"
-        />		<div class="introduction">
+		<Button content="Lien vers mon cv" link="Voir" href={EliasZerar} target="_blank" />
+		<div class="introduction">
 			<div class="intro-item">
-				<h3>lorem+</h3>
+				<h3>Développement Moderne</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem labore aliquid alias quia
-					deleniti illo doloremque voluptatem, odio praesentium dolor.
+					Je crée des interfaces fluides et réactives en utilisant les frameworks les plus récents.
+					Mon objectif est d'allier performance technique et esthétique visuelle.
 				</p>
 			</div>
 
 			<div class="intro-item">
-				<h3>lorem+</h3>
+				<h3>Expérience Radio France</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem labore aliquid alias quia
-					deleniti illo doloremque voluptatem, odio praesentium dolor rem accusantium numquam ipsum
-					vel quasi corrupti doloribus debitis voluptatibus.
+					Actuellement en alternance sur la plateforme ici.fr, je travaille sur des problématiques
+					de haut trafic, garantissant une accessibilité et une robustesse optimales pour des
+					milliers d'utilisateurs.
 				</p>
 			</div>
 
 			<div class="intro-item">
-				<h3>lorem+</h3>
+				<h3>Esprit d'Équipe</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem labore aliquid alias quia
-					deleniti illo doloremque voluptatem, odio praesentium dolor rem accusantium numquam ipsum
-					vel quasi corrupti doloribus debitis voluptatibus.
+					Adepte des méthodes Agiles et du travail collaboratif via Git, je m'intègre facilement
+					dans une équipe pour transformer des concepts Figma en solutions web concrètes.
 				</p>
 			</div>
 		</div>
@@ -49,23 +48,32 @@
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&display=swap');
+	.content {
+		p {
+			margin-bottom: 2rem;
+		}
+	}
 	.home {
 		font-family: 'Kameron', serif;
 		display: flex;
-        height: 100%;
-        padding: 4rem;
+		height: 100%;
+		padding: 2rem;
 		h1 {
 			font-size: 1.5rem;
 		}
 
-		h2 {
+		.second-part {
 			font-size: 2.5rem;
 			margin: 0;
+			display: block;
 		}
-		h1,
-		h2 {
-			span {
-				color: #ff530a;
+		h1 {
+			.web,
+			span:first-child {
+				background: linear-gradient(90deg, #d9764c, #ff0000);
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
 			}
 		}
 		p:first-child {
@@ -109,17 +117,26 @@
 	}
 
 	.introduction {
+        padding-top: 2rem;
 		p {
 			display: flex;
 			flex-direction: column;
 			max-width: 23.125rem;
 		}
+        h3 {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff8a00, #ff003c);
+            background-clip: text;
+            color: transparent;
+        }
 	}
 	@media (min-width: 768px) {
 		.introduction {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 3rem;
+			margin-top: 3rem;
+            padding: 0;
 		}
 
 		.intro-item {
@@ -130,12 +147,13 @@
 				font-size: 1.8rem;
 			}
 
-			h2 {
+			.second-part {
 				font-size: 3.5rem;
 			}
 			p {
 				font-size: 1rem;
 			}
+			padding: 4rem;
 		}
 		.avatar-wrapper {
 			position: relative;
@@ -179,7 +197,7 @@
 				font-size: 2.3rem;
 			}
 
-			h2 {
+			.second-part {
 				font-size: 5rem;
 			}
 

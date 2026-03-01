@@ -1,18 +1,31 @@
 <script>
+	import svelte from '$lib/assets/aboutscreen/svelte.png';
+	import react from '$lib/assets/aboutscreen/react.png';
+	import html from '$lib/assets/aboutscreen/html.png';
+	import css from '$lib/assets/aboutscreen/css.png';
+	import github from '$lib/assets/aboutscreen/github.png';
+	import gsap from '$lib/assets/aboutscreen/gsap.png';
+	import rgaa from '$lib/assets/aboutscreen/rgaa.png';
+	import php from '$lib/assets/aboutscreen/php.png';
+	import node from '$lib/assets/aboutscreen/node.png';
+	import sql from '$lib/assets/aboutscreen/sql.png';
+	import figma from '$lib/assets/aboutscreen/figma.png';
+	import webstorm from '$lib/assets/aboutscreen/webstorm.png';
+	import docker from '$lib/assets/aboutscreen/docker.png';
 </script>
 
-<section id="à propos">
-	<div>
+<section id="about">
+	<div class="presentation">
 		<h2>A propos de moi</h2>
-		<ul>
-			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias</li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias</li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias</li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias</li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias</li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias</li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias</li>
-		</ul>
+		<p>
+			Actuellement en 3ème année de <span>BUT MMI</span> à Champs-sur-Marne, je suis un développeur
+			web passionné avec <span>4 ans d'expérience</span>.
+		</p>
+		<p>
+			Mon parcours m'a appris l'importance de l'<span>investissement</span> et de la
+			<span>communication</span>, des valeurs que j'applique au quotidien. Toujours curieux, j'aime
+			transformer des idées en interfaces <span>dynamiques</span> et <span>accessibles</span>.
+		</p>
 	</div>
 
 	<div class="activités">
@@ -24,43 +37,45 @@
 			<li>Tir à la carabine (1ans )</li>
 		</ul>
 	</div>
+
 	<div class="competences">
 		<h2>Compétences</h2>
 	</div>
+
 	<div class="frontEnd">
 		<h3>Front end</h3>
 		<ul>
-			<li>Svelte / React</li>
-			<li>HTML / CSS / JavaScript</li>
-			<li>Animations</li>
-			<li>Accessibilité</li>
+			<li>Svelte <img alt="" src={svelte} /> / React <img alt="" src={react} /></li>
+			<li>HTML <img src={html} alt="" /> / CSS <img src={css} alt="" /></li>
+			<li>Animations <img src={gsap} alt="" /></li>
+			<li>Accessibilité <img src={rgaa} alt="" /></li>
 		</ul>
 	</div>
 
 	<div class="backEnd">
 		<h3>Back end</h3>
 		<ul>
-			<li>PHP</li>
-			<li>Node.js</li>
-			<li>API REST</li>
-			<li>Bases de données (MySQL)</li>
+			<li>PHP <img src={php} alt="" /></li>
+			<li>Node.js (Express / API REST) <img src={node} alt="" /></li>
+			<li>Bases de données (MySQL) <img src={sql} alt="" /></li>
 		</ul>
 	</div>
 
 	<div class="tools">
 		<h2>Outils & environnement</h2>
 		<ul>
-			<li>Git / GitHub</li>
-			<li>VS Code / Webstorm</li>
-			<li>Figma</li>
-			<li>Docker</li>
+			<li>Git / GitHub <img src={github} alt="" /></li>
+			<li>Webstorm <img src={webstorm} alt="" /></li>
+			<li>Figma <img src={figma} alt="" /></li>
+			<li>Docker <img src={docker} alt="" /></li>
 		</ul>
 	</div>
+
 	<div class="work">
 		<h2>Méthode de travail</h2>
 		<ul>
-			<li>Autonomie</li>
-			<li>Organisation</li>
+			<li>Prise de notes</li>
+			<li>Organisation (méthode Agile scrum scrumban)</li>
 			<li>Travail en équipe</li>
 			<li>Veille technologique</li>
 		</ul>
@@ -68,12 +83,9 @@
 </section>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 	section {
 		display: grid;
 		gap: 1rem;
-		font-family: 'Montserrat', sans-serif;
 		padding: 4rem;
 		div {
 			box-shadow: 0 -0.7px 0 0.3px #ffffff;
@@ -81,19 +93,57 @@
 			background: rgba(26, 26, 26, 0.6);
 			color: white;
 			border-radius: 0.875rem;
+			justify-content: center;
+			text-align: center;
+			li {
+				text-align: left;
+			}
+			p {
+				text-align: left;
+			}
+			span {
+				color: orangered;
+			}
 			h2 {
-				text-align: center;
-				font-size: 1.375rem;
+				display: inline-block;
+				background: linear-gradient(90deg, #ff8a00, #ff003c);
+				background-clip: text;
+				color: transparent;
+				font-size: 1.4rem;
 			}
 			ul {
 				list-style-type: none;
 				padding: 0;
 				li {
 					margin-bottom: 1rem;
+					display: flex;
+					align-items: center;
+					flex-wrap: wrap;
+					gap: 0.5rem;
+					img {
+						height: 1.2em;
+						vertical-align: middle;
+						margin: 0 5px;
+						object-fit: contain;
+					}
 				}
 			}
 		}
+		.presentation {
+			p {
+				font-size: 1.1rem;
+				line-height: 1.7;
+				margin-bottom: 1.2rem;
+				color: #e0e0e0;
+				font-weight: 400;
+			}
+
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
+
 	@media (min-width: 650px) {
 		section {
 			display: grid;
