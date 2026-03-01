@@ -141,6 +141,12 @@
 
 		.intro-item {
 			max-width: none;
+			h3 {
+				display: inline-block;
+				background: linear-gradient(90deg, #ff8a00, #ff003c);
+				background-clip: text;
+				color: transparent;
+			}
 		}
 		.home {
 			h1 {
