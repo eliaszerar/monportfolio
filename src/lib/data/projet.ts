@@ -4,7 +4,6 @@ import miniblog from '$lib/assets/miniblog/miniblog.png';
 import resaweb from '$lib/assets/resaweb/resaweb.png';
 import truffaut from '$lib/assets/truffaut/truffaut.png';
 
-// Imports des images de galeries
 import aliceFirst from '$lib/assets/aliceGuy/firstAlice.png';
 import aliceSecond from '$lib/assets/aliceGuy/second.png';
 import aliceLast from '$lib/assets/aliceGuy/last.png';
@@ -33,10 +32,9 @@ export interface Project {
 	description?: string;
 	image: string;
 	alt: string;
-	link: string;
+	link?: string;
 	year: string;
 	tools: string[];
-	// Mise à jour ici pour inclure l'attribut alt avec chaque image
 	gallery: { src: string; alt: string }[];
 }
 
@@ -44,13 +42,14 @@ export const projects: Project[] = [
 	{
 		id: 1,
 		title: 'Alice Guy',
-		shortdescription: 'Le site consacré à Alice Guy a été réalisé lors d’un projet collectif...',
+		shortdescription: `Le site consacré à Alice Guy a été réalisé lors d'un projet collectif...`,
 		description:
-			"Alice Guy est un site créé dans le cadre d'un projet universitaire collectif lors de ma deuxième année à la BUT MMI. L'objectif était de créer un site dédié à un personnage historique, en l'occurrence Alice Guy. Le site a été développé à l'aide de HTML, SASS, Javascript, GSAP pour les animations, Phaser.js pour le jeu et AJAX pour le chargement dynamique du contenu. Nous avons également utilisé PHP pour créer l'API et React pour créer le back-office. Ce projet m'a permis d'explorer différentes technologies et d'améliorer mes compétences en développement web.",
+			"Alice Guy est un site créé dans le cadre d'un projet universitaire collectif lors de ma deuxième année à la BUT MMI. L'objectif était de concevoir un site dédié à cette pionnière du cinéma, en combinant storytelling visuel et interactivité. Le site a été développé en HTML, SASS et JavaScript, avec GSAP pour les animations, Phaser.js pour un jeu intégré et AJAX pour le chargement dynamique du contenu.\n\n" +
+			"Nous avons également développé une API en PHP et un back-office complet en React pour la gestion du contenu. Ce projet collectif m'a permis d'explorer un large éventail de technologies, de mieux appréhender la collaboration en équipe et de renforcer mes compétences en développement web.",
 		image: aliceGuy,
 		alt: 'Aperçu principal du site dédié à Alice Guy',
 		link: 'https://aliceguyeu.tahar.projetsmmichamps.fr/',
-		year: '2023',
+		year: '2024',
 		tools: ['HTML', 'SASS', 'JavaScript', 'GSAP', 'Phaser.js', 'PHP', 'React'],
 		gallery: [
 			{ src: aliceFirst, alt: "Interface d'accueil et animations du site Alice Guy" },
@@ -62,9 +61,10 @@ export const projects: Project[] = [
 	{
 		id: 2,
 		title: 'Sportiz',
-		shortdescription: 'Projet de groupe en BUT MMI : création d’un site de visualisation...',
+		shortdescription: `Projet de groupe en BUT MMI : création d'un site de visualisation...`,
 		description:
-			'Nous avons développé un site web qui présente des données sportives sous forme de visualisations graphiques interactives, principalement en utilisant la bibliothèque D3.js. Nous avons également dû créer des mentions légales détaillées pour assurer la crédibilité et la légalité de notre utilisation des données.',
+			"Dans le cadre d'un projet de groupe en BUT MMI, nous avons développé un site web de visualisation de données sportives. L'ensemble des statistiques est présenté sous forme de graphiques interactifs, conçus principalement avec la bibliothèque D3.js, pour rendre la lecture des données claire et engageante.\n\n" +
+			"Nous avons également rédigé des mentions légales détaillées encadrant l'utilisation des données sportives. Ce projet m'a permis de découvrir la dataviz et de comprendre les enjeux liés à la publication de données sur le web.",
 		image: sportiz,
 		alt: 'Maquette de présentation du projet Sportiz',
 		link: 'https://eliaszerar.github.io/Sportiz/',
@@ -83,14 +83,10 @@ export const projects: Project[] = [
 	{
 		id: 3,
 		title: 'Miniblog',
-		shortdescription: 'Projet de groupe en BUT MMI : création d’un site de visualisation...',
+		shortdescription: `Projet individuel en BUT MMI : conception d'un blog en PHP avec architecture MVC...`,
 		description:
-			'Dans le cadre d’un projet individuel réalisé au 3ᵉ semestre du BUT MMI, j’ai conçu un blog en PHP en m’appuyant sur l’architecture MVC, ce qui m’a permis de mieux comprendre et maîtriser cette organisation de développement.\n' +
-			'\n' +
-			'Le blog propose plusieurs niveaux d’accès : un espace administrateur dédié à la gestion des articles, des utilisateurs et des commentaires ; un espace membre permettant aux utilisateurs connectés de publier des commentaires ; ainsi qu’un accès limité pour les visiteurs non connectés, qui peuvent uniquement consulter les articles.\n' +
-			'Le site comprend aussi une page de profil personnalisée pour chaque utilisateur, présentant sa photo, son nom et diverses informations personnelles.\n' +
-			'\n' +
-			'Ce projet m’a permis de renforcer mes compétences en PHP et en gestion de bases de données, tout en mettant en place différentes mesures de sécurité.',
+			"Dans le cadre d'un projet individuel réalisé au 3ᵉ semestre du BUT MMI, j'ai conçu un blog en PHP en m'appuyant sur l'architecture MVC. Le blog propose trois niveaux d'accès : un espace administrateur pour gérer articles, utilisateurs et commentaires ; un espace membre pour publier des commentaires ; et un accès visiteur limité à la lecture des articles.\n\n" +
+			"Le site intègre également une page de profil personnalisée pour chaque utilisateur, avec photo, nom et informations personnelles. Ce projet m'a permis de renforcer mes compétences en PHP et en gestion de bases de données, tout en mettant en place différentes mesures de sécurité.",
 		image: miniblog,
 		alt: "Aperçu de la page d'accueil du Miniblog",
 		link: 'https://miniblog.zerar.butmmi.o2switch.site/index.php?action=home',
@@ -109,13 +105,14 @@ export const projects: Project[] = [
 	{
 		id: 4,
 		title: 'Resaweb',
-		shortdescription: 'Projet de groupe en BUT MMI : création d’un site de visualisation...',
+		shortdescription: 'Premier site de réservation fonctionnel réalisé en PHP lors de ma première année...',
 		description:
-			'Dans le cadre de ma première année de BUT MMI, j’ai réalisé mon premier site web de réservation complètement fonctionnel en PHP, avec une base de données créée et gérée dans phpMyAdmin. Pour ce projet j’ai choisi de développer un site de location de motos : un service permettant aux utilisateurs de consulter différentes catégories de motos, de voir les détails et de réserver en ligne. Le site comprend toutes les pages et fonctionnalités demandées : • une page d’accueil présentant l’agence et ses services, • une page listant les motos disponibles, • une page avec les détails de chaque moto, • une barre de navigation, • un formulaire de réservation, • des mentions légales, un slider, • une barre de tri et une barre de recherche, • et l’envoi automatique d’un email après soumission du formulaire. Le site est entièrement fonctionnel et adapté à la navigation sur ordinateur et tablette. Ce projet a été particulièrement formateur car il m’a permis de concevoir un système de réservation complet en PHP, d’utiliser une base de données, et d’intégrer plusieurs langages web pour enrichir mes compétences en développement web.',
+			"Dans le cadre de ma première année de BUT MMI, j'ai réalisé mon premier site web de réservation entièrement fonctionnel en PHP, avec une base de données gérée via phpMyAdmin. J'ai choisi de développer un service de location de motos permettant aux utilisateurs de consulter les catégories disponibles, de voir le détail de chaque moto et de réserver en ligne.\n\n" +
+			"Le site regroupe toutes les fonctionnalités attendues : page d'accueil, catalogue avec tri et recherche, fiches détaillées, formulaire de réservation avec envoi automatique d'e-mail, slider et mentions légales. Ce projet m'a été particulièrement formateur pour concevoir un système complet en PHP et intégrer plusieurs langages web de manière cohérente.",
 		image: resaweb,
 		alt: "Page d'accueil du site de réservation de motos Resaweb",
 		link: 'https://resaweb.zerar.butmmi.o2switch.site/',
-		year: '2024',
+		year: '2023',
 		tools: ['HTML', 'CSS', 'PHP', 'SQL', 'JAVASCRIPT'],
 		gallery: [
 			{ src: resawebImg1, alt: 'Catalogue des motos disponibles avec barre de tri' },
@@ -126,13 +123,13 @@ export const projects: Project[] = [
 	},
 	{
 		id: 5,
-		title: 'Refonte du site Truffaud',
-		shortdescription: 'Projet de groupe en BUT MMI : création d’un site de visualisation...',
+		title: 'Refonte du site Truffaut',
+		shortdescription: `Projet de groupe en BUT MMI : refonte UI/UX de la page d'accueil du site Truffaut sur Figma...`,
 		description:
-			'Dans le cadre d’un projet scolaire en UI/UX design réalisé en première année, nous avons travaillé en groupe de trois pour repenser l’interface de la page d’accueil du site de Truffaut, en utilisant l’outil Figma. Nous avons commencé par créer un moodboard afin de définir l’ambiance visuelle et l’univers graphique que nous souhaitions donner au site. Ensuite, nous avons conçu un wireframe pour reconstruire la structure principale tout en conservant les éléments essentiels de navigation. Notre objectif était de faire évoluer le design initial, plutôt minimaliste et sobre, vers une identité plus axée sur le bien-être et la détente. Pour finir, nous avons réalisé la maquette finale en intégrant des illustrations, des formes plus arrondies et une palette de couleurs plus chaleureuse, avec des tons rose-orangés. Nous avons conservé la présence du vert, mais dans une teinte moins froide. Ce projet nous a permis d’explorer différentes approches créatives, tout en renforçant nos compétences en UI/UX design et notre maîtrise de Figma.',
+			"Dans le cadre d'un projet scolaire en UI/UX design réalisé en première année, nous avons travaillé en groupe de trois pour repenser l'interface de la page d'accueil du site Truffaut sur Figma. Nous avons commencé par un moodboard pour définir l'ambiance visuelle souhaitée, puis conçu un wireframe pour restructurer la page tout en conservant les éléments de navigation essentiels.\n\n" +
+			"Notre objectif était de faire évoluer le design initial, sobre et minimaliste, vers une identité plus chaleureuse axée sur le bien-être. La maquette finale intègre des illustrations, des formes arrondies et une palette rose-orangée, tout en conservant le vert de la marque dans une teinte plus douce. Ce projet nous a permis d'explorer différentes approches créatives et de renforcer notre maîtrise de Figma.",
 		image: truffaut,
 		alt: 'Aperçu de la maquette de refonte du site Truffaut',
-		link: 'https://miniblog.zerar.butmmi.o2switch.site/index.php?action=home',
 		year: '2024',
 		tools: ['Figma'],
 		gallery: [
