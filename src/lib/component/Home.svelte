@@ -117,18 +117,18 @@
 	}
 
 	.introduction {
-        padding-top: 2rem;
+		padding-top: 2rem;
 		p {
 			display: flex;
 			flex-direction: column;
 			max-width: 23.125rem;
 		}
-        h3 {
-            display: inline-block;
-            background: linear-gradient(90deg, #ff8a00, #ff003c);
-            background-clip: text;
-            color: transparent;
-        }
+		h3 {
+			display: inline-block;
+			background: linear-gradient(90deg, #ff8a00, #ff003c);
+			background-clip: text;
+			color: transparent;
+		}
 	}
 	@media (min-width: 768px) {
 		.introduction {
@@ -136,7 +136,7 @@
 			grid-template-columns: repeat(3, 1fr);
 			gap: 3rem;
 			margin-top: 3rem;
-            padding: 0;
+			padding: 0;
 		}
 
 		.intro-item {

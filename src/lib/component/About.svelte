@@ -12,6 +12,7 @@
 	import figma from '$lib/assets/aboutscreen/figma.png';
 	import webstorm from '$lib/assets/aboutscreen/webstorm.png';
 	import docker from '$lib/assets/aboutscreen/docker.png';
+	import Opquast from '$lib/assets/opquast.pdf';
 </script>
 
 <section id="about">
@@ -19,7 +20,7 @@
 		<h2>A propos de moi</h2>
 		<p>
 			Actuellement en 3ème année de <span>BUT MMI</span> à Champs-sur-Marne, je suis un développeur
-			web passionné avec <span>4 ans d'expérience</span>.
+			web passionné avec <span>1 an d'expérience</span>.
 		</p>
 		<p>
 			Mon parcours m'a appris l'importance de l'<span>investissement</span> et de la
@@ -31,10 +32,10 @@
 	<div class="activités">
 		<h2>Activités</h2>
 		<ul>
-			<li>Jiu jitsu brésilien(2ans)</li>
-			<li>Cor d’harmonie (pendant 15 ans)</li>
-			<li>Orchestre (pendant 10 ans)</li>
-			<li>Tir à la carabine (1ans )</li>
+			<li>Jiu jitsu brésilien (durée: 2 ans)</li>
+			<li>Cor d’harmonie (durée: 15 ans)</li>
+			<li>Orchestre (durée: 10 ans)</li>
+			<li>Tir à la carabine (durée: 1 an)</li>
 		</ul>
 	</div>
 
@@ -49,6 +50,9 @@
 			<li>HTML <img src={html} alt="" /> / CSS <img src={css} alt="" /></li>
 			<li>Animations <img src={gsap} alt="" /></li>
 			<li>Accessibilité <img src={rgaa} alt="" /></li>
+			<li>
+				Certification Opquast <a href={Opquast} target="_blank">Lien de la certification opquast</a>
+			</li>
 		</ul>
 	</div>
 
@@ -97,6 +101,9 @@
 			text-align: center;
 			li {
 				text-align: left;
+				a {
+					color: white;
+				}
 			}
 			p {
 				text-align: left;
